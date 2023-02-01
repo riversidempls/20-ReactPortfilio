@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
 import ContactForm from './components/Contact';
+import GIS from './components/GIS';
 // import Header from './components/Header';
 // import Projects from './components/Projects';
 
@@ -9,12 +10,8 @@ import ContactForm from './components/Contact';
 
 function App() {
   const [categories] = useState([
-    {
-      name: 'GIS',
-      description: 'Projects highlighting my experience with GIS.',
-    },
+    { name: 'GIS', description: 'Projects highlighting my experience with GIS.' },
     { name: 'Water Quality', description: 'Projects aimed to improve water quality for all Minnesotans.' },
-    { name: 'Grants Administration', description: 'Projects to integrate digital document signing with grants administration.' },
     { name: 'Private Lands Conservation', description: 'Projects working to secure voluntary conservation easements on private land.' },
   ]);
 
@@ -40,6 +37,7 @@ function App() {
           <ContactForm></ContactForm>
         )}
       </main>
+      <GIS></GIS>
     </div>
   );
 }

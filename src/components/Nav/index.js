@@ -1,25 +1,45 @@
-import React, { useEffect } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+// import React from "react";
+import "../../styles/nav.css";
+import React from 'react';
+
+
+const styles = {
+  navStyle: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "60%",
+    height: "100px",
+    padding: "2%",
+    listStyleType: "none",
+  },
+  navFont: {
+    fontSize: "40px",
+  },
+};
+
+
+
 
 function Nav(props) {
   const {
-    categories = [],
-    setCurrentCategory,
+    // categories = [],
+    // setCurrentCategory,
     contactSelected,
-    currentCategory,
+    // currentCategory,
     setContactSelected,
+    currentPage,
+    handlePageChange
   } = props;
 
-  useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
+
+
+
+
 
   return (
     <header className="flex-row px-1">
       <h2>
-        <a data-testid="link" href="/">
-          <span role="img" aria-label="camera"> CJD - </span> Conor Donnelly
-        </a>
+        <a data-testid="link" href="../../src/assets/resume/ConorDonnellyResume.pdf"> Conor Donnelly </a>
       </h2>
       <nav>
         <ul className="flex-row">
@@ -31,7 +51,41 @@ function Nav(props) {
           <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span onClick={() => setContactSelected(true)}>Contact</span>
           </li>
-          {categories.map((category) => (
+          <li style={styles.navFont} className='nav-item'>
+            <a
+              href="#GIS"
+              onClick={() => handlePageChange("GIS")}
+              className={currentPage === "GIS" ? "nav-link active" : "nav-link"}
+            >
+              GIS
+            </a>
+          </li>
+          <li style={styles.navFont} className='nav-item'>
+            <a
+              href="#waterQuality"
+              onClick={() => handlePageChange("WaterQuality")}
+              className={currentPage === "WaterQuality" ? "nav-link active" : "nav-link"}
+            >
+              Water Quality
+            </a>
+          </li>
+          <li style={styles.navFont} className='nav-item'>
+            <a
+              href="#waterQuality"
+              onClick={() => handlePageChange("WaterQuality")}
+              className={currentPage === "WaterQuality" ? "nav-link active" : "nav-link"}
+            >
+              Private Lands Conservation
+            </a>
+          </li>
+
+
+
+
+
+
+
+          {/* {categories.map((category) => (
             <li
               className={`mx-1 ${currentCategory.name === category.name && !contactSelected && 'navActive'
                 }`}
@@ -43,10 +97,10 @@ function Nav(props) {
                   setContactSelected(false);
                 }}
               >
-                {capitalizeFirstLetter(category.name)}
+                category.name
               </span>
             </li>
-          ))}
+          ))} */}
         </ul>
       </nav>
     </header>

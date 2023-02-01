@@ -1,0 +1,15 @@
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    color: #a0a0a0;
+  }
+  
+  .header h3 {
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+  }

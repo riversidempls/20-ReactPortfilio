@@ -1,5 +1,5 @@
 import React from 'react';
-import coverImage from '../../assets/cover/world-map.png';
+import coverImage from '../../assets/cover/binary_map.jpg';
 function About() {
   return (
     <section className="my-5">
